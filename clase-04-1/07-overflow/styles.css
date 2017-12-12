@@ -1,0 +1,28 @@
+/* 
+  overflow determina como se manejará el contenido que se desborde de su contenedor
+
+  overflow:
+    visible (default)
+    hidden (oculta todo por fuera)
+    auto (añade un scroll de ser necesario)
+    scroll (añade siempre el scroll)
+
+
+  En CSS3 llegan overflow-x y overflow-y
+
+  Son iguales solo que para horizontal y vertical
+
+  Ademas en overflow si se usan dos valores queda así:
+
+  overflow: valueX valueY;
+  
+ */
+
+
+ div {
+  font-size: 1.5em;
+  background: yellow;
+  width: 200px;
+  height: 200px;
+  overflow: scroll;
+ }

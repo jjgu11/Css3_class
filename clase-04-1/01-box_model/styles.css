@@ -1,0 +1,67 @@
+/* 
+  Box model
+
+  ¿Qué es una caja?
+    Todo elemento define una caja en el layout (una caja es un rectángulo en el layout)
+
+  ¿Qué es el layout?
+    Es la disposicion (organización y distribucion) de los elementos en el espacio disponible en pantall para la aplicacion o sitio web (viewport).
+
+  Existen dos tipos de elementos:
+    block-level
+      1. Ocupan el 100% de ancho disponible (por default)
+    inline-level
+      2. Su ancho está definido por su contenido.
+
+  Elementos de una caja
+
+    INTERNOS
+      content (content-box)
+        El contenido 
+      padding (padding-box)
+        Es el espacio entre el contenido y los limites de la caja (es un espacio interno, relleno)
+      border (border-box)
+        La linea que limita a la caja. Por defecto las cajas tiene el borde en "none"
+
+    EXTERNOS
+      margin
+        Es el espacio entre una caja y las cajas adyacentes.
+
+*/
+
+.box {
+  background: yellow;
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  border: 2px solid black;
+  margin: 50px;
+}
+
+/* 
+  ¿Cómo se calcula el tamaño de una caja?
+
+  Por defecto el navegador hace lo siguiente:
+
+    dimensiones = dimensiones_declaradas + padding_total + border_total
+
+  Sin embargo, CSS3 trae una propiedad que indica como se calculará el tamaño de una caja: "box-sizing"
+
+    box-sizing
+      content-box (default)
+      padding-box
+      border-box
+*/
+
+.box {
+  box-sizing: border-box;
+}
+
+/* 
+  Practica recomendada:
+  
+  * {
+    box-sizing: border-box;
+  }
+
+*/

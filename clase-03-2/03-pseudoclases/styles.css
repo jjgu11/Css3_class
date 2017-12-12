@@ -1,0 +1,97 @@
+/* 
+  Las seudoclases son tipos de selectores que se "activan" en determinadas circunstancias. Se escriben con :
+  Por ejemplo:
+   :hover {
+      
+   }
+  Con la excepcion de ::selection
+
+    :hover      -> cuando se pasa el cursor por encima del elemento
+    :active     -> cuando se hace clic
+    :visited    -> un enlace al que ya se visitó
+    :focus      -> un campo de formulario seleccionado
+    :empty      -> selecciona elementos vacios
+    :not()      -> selecciona a los elementos que no coincidan con el selector pasado como parámetro
+    ::selection -> para aplicar estilos a la seleccion
+    :target     -> selecciona el destino de un enlace interno
+
+*/
+
+h1:active {
+  color: red;
+}
+
+input:focus {
+  background: red;
+}
+
+p:not(.not) {
+  /*color: red;*/
+}
+
+::selection {
+  background: purple;
+  color: white;
+}
+
+#destino {
+  display: none;
+}
+#destino:target {
+  display: block;
+  background: yellow;
+}
+
+
+/* 
+  Selectores avanzados
+  
+  :first-child
+  :last-child
+    seleccionan al primer y ultimo hijo de un elemento (sin importar que tipo de elemento es)
+
+  :first-of-type
+  :last-of-type
+    seleccionan al primer y ultimo hijo según el elemento. Por ejemplo, p:first-of-type selecciona al primer parrafo hijo.
+
+  :nth-child()
+  :nth-of-type()
+    Reciben parámetros
+      numero         -> 5 (selecciona al 5to elemento)
+      multiplo de n  -> 2n (selecciona de 2 en 2)
+      formula        -> 3n+1 (selecciona a 1, 4, 7)
+      even/odd       -> pares e impares
+
+    Trucos:
+      seleccionar los primeros 4 elementos:       -n+4
+      seleccionar los elementos a partir del 4:    n+4
+
+
+  :nth-last-child()
+  :nth-last-of-type()
+    Identico a nth-child() y nth-of-type() pero se cuentan desde el final
+
+*/
+
+article :first-child {
+  /*color: red;*/
+}
+
+/*p:first-of-type {
+  color: red;
+}*/
+
+
+p:nth-of-type(2){
+  color: red;
+}
+
+/*li:nth-child(n+4) {
+  background: teal;
+  color: #fff;
+}*/
+
+li:nth-last-child(-n+4){
+  background: teal;
+  color: #fff;
+}

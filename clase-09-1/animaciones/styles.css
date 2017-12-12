@@ -1,0 +1,67 @@
+/*body {
+  background: yellow;
+  animation: body-bg 5s;
+}
+
+@keyframes body-bg {
+  50% {
+    background: red;
+  }
+  100% {
+    background: purple;
+  }
+}
+*/
+
+
+.ball {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(teal,black);
+  animation: rebotar 1s infinite alternate linear;
+  margin-left: 15px;
+}
+
+.shadow {
+  width: 180px;
+  height: 1px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px black;
+  opacity: .5;
+  z-index: -1;
+  position: absolute;
+  top: 450px;
+  animation: sombra 1s infinite alternate linear;
+}
+
+@keyframes rebotar {
+  0% {
+    transform: translateY(0);
+  }
+
+  90% {
+    height: 150px;
+  }
+
+  100% {
+    transform: translateY(200px);
+    height: 120px;
+  }
+}
+
+@keyframes sombra {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(.5);
+    opacity: .2;
+  }
+}
+
+.teoria {
+  float: right;
+  width: 60%;
+}

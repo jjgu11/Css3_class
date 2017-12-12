@@ -1,0 +1,98 @@
+/* 
+  El margin es la separacion de una caja con las adyacentes.
+
+  
+
+*/
+
+div {
+  background: yellow;
+  width: 200px;
+  height: 200px;
+
+}
+
+.box1 {
+  margin-bottom: 3em;
+}
+
+.box2 {
+  /*margin-top: 3em;*/
+  /*margin-bottom: 1em;*/
+  background: red;
+}
+
+.box2-container {
+  padding-top: 3em;
+  background: white;
+}
+
+
+/* 
+
+  Colapsado de margenes
+
+  ELEMENTOS ADYACENTES
+    Los margenes verticales se colapsan y siempre prevalece el mayor. Dos formas de prevenirlo:
+
+    1. Un elemento vacio entre las cajas (no recomendado)
+    2. Un contenedor para una de las cajas con un padding
+
+    * Tener en cuenta el colapsado cuando se construyen layouts.
+
+  PADRES A HIJOS
+    Los margenes verticales de un hijo son absorbidos por el padres (se calculan hacia afuera)
+
+    Se resuelve (en el contenedor):
+    1. padding-top: 1px;
+    2. overflow: hidden;
+    3. float: right | left (no recomendado);
+
+ */
+
+ p {
+  border: 1px solid black;
+  margin-top: 2em;
+  margin-bottom: 0;
+ }
+
+ .pcontainer {
+  /*padding-top: 1px;*/
+  /*overflow: hidden;*/
+  /*float: left;*/
+ }
+
+
+ /* 
+
+  Existen 4 propiedades para margin:
+
+  margin-top: ;     (arriba)
+  margin-right: ;   (derecha)
+  margin-bottom: ;  (abajo)
+  margin-left: ;    (izquierda)
+
+  También existe un shorthand:
+
+  margin: value; 
+    (para los cuatro)
+  margin: value1 value2; 
+    (1 = top, bottom  2 = right, left)
+  margin: value1 value2 value3;
+    (1 = top, 2 = right, left 3 = bottom)
+  margin: value1 value2 value3 value4;
+    (1= top, 2=right, 3=bottom, 4=left)
+
+
+  * Comenzar de arriba (top) y moverse en el sentido de las agujas del reloj
+
+  */
+
+  /* 
+    TIPS:
+
+        Se pueden asignar margenes negativos. Se usan mucho para mover elementos.
+
+        margin: auto; centra elementos de bloque con ancho definido
+
+   */

@@ -1,0 +1,27 @@
+[class^="social-"] {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  background-image: url(img/social1.png);
+  background-size: 144px 180px;
+}
+
+.social-facebook {
+  background-position: -72px 0;
+}
+
+.social-twitter {
+  background-position: 0 -36px;
+}
+
+.social-linkedin {
+  background-position: -108px -108px;
+}
+
+.social-youtube {
+  background-position: -108px -144px;
+}
+
+.social-instagram {
+  background-position: -72px -108px;
+}

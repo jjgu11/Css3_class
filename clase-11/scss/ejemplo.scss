@@ -1,0 +1,71 @@
+// Mixins responsive
+
+@mixin desde($size){
+  @media screen and (min-width: $size){
+    @content;
+  }
+}
+
+@mixin hasta($size){
+  @media screen and (max-width: $size){
+    @content;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 2;
+}
+
+.main {
+  background: green;
+  @include desde(768px){
+    width: 75%;
+  }
+  &,
+  &-aside,
+  &-header,
+  &-footer {
+    min-height: 120px;
+  }
+}
+
+.main-aside {
+  background: red;
+  @include desde(768px){
+    width: 25%;
+  }
+}
+
+.main-footer {
+  background: steelblue;
+}
+
+.main-header {
+  background: orange;
+}
+
+.main-nav {
+  background: yellow;
+}
+
+.main-menu {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  @include desde(468px){
+    display: flex;
+    &__item {
+      flex: auto;
+      text-align: center;
+    }
+  }
+}
+
+.main-container {
+  @include desde(768px) {
+    display: flex;
+  }
+}

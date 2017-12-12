@@ -1,0 +1,10 @@
+$bg-color: yellow;
+body {
+  background: red;
+}
+
+%button {
+  display: inline-block;
+  line-height: 2;
+  padding: 0 1em;
+}

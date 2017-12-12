@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Flexbox</h1>
+    <p>Es un modelo de layout que requiere la relación de un contenedor (llamado flex-container) y de sus hijos directos (llamados flex-items). De esa manera, el flex-container define un contexto respecto al cual los flex-items van a organizarse y calcular sus dimensiones.</p>
+
+<pre>
+&lt;div class="papa"&gt;
+  &lt;div class="hijo"&gt;&lt;/div&gt;
+  &lt;div class="hijo"&gt;&lt;/div&gt;
+  &lt;div class="hijo"&gt;
+    &lt;div class="nieto"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>En el ejemplo anterior, <code>&lt;div class="nieto"&gt;&lt;/div&gt;</code> no se considera un flex-item porque no es hijo directo del flex-container. Se define un flex-container así:</p>
+
+<pre>
+.papa {
+  display: flex;
+}
+</pre>
+
+<p>Sin embargo, un flex-item podría a su vez ser un flex-container y así sucesivamente.</p>
+<pre>
+.hijo {
+  display: flex;
+}
+</pre>
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+main {
+  background: tomato;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+aside {
+  background: lightgreen;
+  -ms-grid-row: 3;
+}
+
+footer {
+  background: steelblue;
+  -ms-grid-row: 5;
+  -ms-grid-column-span: 3;
+}
+
+header {
+  background: gold;
+  -ms-grid-column-span: 3;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 10px 400px;
+  -ms-grid-rows: 100px 10px 300px 10px 100px;
+}

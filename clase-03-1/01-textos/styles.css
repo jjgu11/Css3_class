@@ -1,0 +1,62 @@
+/* 
+  Estilos de textos (continuacion)
+  
+  * Las propiedades shorthand agrupan un conjunto de propiedades relacionadas. Por ejemplo, tenemos la propiedad font (shorthand). 
+
+  font
+    font-style
+    font-weigth
+    font-size / line-height * (obligatorio solo font-size)
+    font-family *
+
+  Cuando se usa una propiedad shorthand si no se especifican ciertos valores estos se setean automáticamente.
+
+  Cuando usamos font, tenemos que definir obligatoriamente font-size y font-family (font-family siempre al final).
+
+  Si usas line-height debe estar después de font-size y separado por un slash (/).
+
+*/
+
+p {
+  /*font: italic 20px/30px verdana;*/
+  /*font-style: italic;*/
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Verdana, sans-serif;
+}
+
+
+div {
+  width: 400px;
+  background: yellow;
+  /*text-align: justify;*/
+  /*word-break: break-all;*/
+  /*word-wrap: break-word;*/
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+/* 
+  word-break: break-all | keep-all | none ; 
+    Rompe las palabras para que se justifiquen los textos con el ancho del contenedor.
+
+  word-wrap: break-word | normal;
+    Rompe solo las palabras que salgan de su contenedor (es decir que la misma palabra sea más ancha que el contenedor)
+  
+  La declaracion:
+    overflow: hidden
+
+  oculta cualquier contenido que se salga de su contenedor
+
+  text-overflow: clip | ellipsis
+    clip: oculta el texto que se escapa del contenedor
+    ellipsis: oculta el texto pero añade ...;
+
+  white-space: ;
+    imita y extiende el comportamiento de <pre></pre>
+      pre     -> imita al <pre></pre> de HTML
+      nowrap  -> pone todo en una linea
+      pre-line -> respeta los espacios y deja que salten las líneas
+
+ */

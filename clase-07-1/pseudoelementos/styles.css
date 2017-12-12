@@ -1,0 +1,44 @@
+.main-title {
+  color: teal;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.main-title:before,
+.main-title:after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  border-bottom: 1px solid;
+  vertical-align: middle;
+}
+
+.main-title:before {
+  margin-right: .2em;
+}
+
+.main-title:after {
+  margin-left: .2em;
+}
+
+.subtitle:after {
+  content: attr(class);
+  color: red;
+  font-size: .6em;
+  vertical-align: top;
+  margin-left: .5em;
+}
+
+.img-container:after {
+  content: url(http://vignette1.wikia.nocookie.net/dragonball/images/8/8c/451px-Goku_SA17_saga.png/revision/latest?cb=20130406165118&path-prefix=es);
+}
+
+h3:before {
+  content: "$ ";
+}
+
+h3:after {
+  content: ".00";
+}

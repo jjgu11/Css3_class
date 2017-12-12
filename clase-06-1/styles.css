@@ -1,0 +1,235 @@
+/* 
+  LAYOUT MODEL
+  
+  Es el conjunto de algoritmos que definen como un elemento se muestra en la pantalla (su posicion y su relacion con los elementos externos).
+
+  Tres propiedades que forman parte de este concepto:
+
+    display
+    float
+    position
+
+  FLOW (FLUJO)
+
+  Es flujo es el orden natural en el que aparecen los elementos en la pantalla. Normalmente los elementos aparecen de arriba hacia abajo (igual que en el codigo). Los hijos aparecen por encima en el apilamiento a sus padres.
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-bottom: 100em;
+  margin: 0;
+  padding-top: 3em;
+}
+.p-container {
+  background: yellow;
+  border: 2px solid black;
+  padding: 2em;
+  background-clip: content-box;
+}
+
+.p-content {
+  border: 2px solid red;
+  margin: 0;
+}
+
+
+/* 
+  Position:
+  
+  Es una propiedad que permite colocar elementos en lugares específicos del viewport alterando el flujo.
+
+  position:
+    static        (no se considera posicionado)
+    relative
+    absolute
+    fixed
+
+    * Tres valores más (experimentales)
+      sticky
+      page
+      center
+
+  Todos los elementos posicionados reciben dos tipos de propiedades:
+
+    offset (para moverlo en los ejex X Y). Offset como tal no es una propiedad sino un conjunto de 4:
+      top
+      right
+      bottom
+      left
+
+    z-index (para moverlo en el eje Z)
+
+  POSITION: STATIC
+
+  Todos los elementos, por defecto, tienen position: static. Por lo tanto, position static significa que el elemento no ha alterado su posicion en el flujo. Por eso se le considera "no posicionado".
+  
+  Se usa para sobreescribir un posicionamiento en ciertas circunstancias (evento, media query).
+
+*/
+
+/* 
+  Elementos posicionados:
+
+    RELATIVE
+    ABSOLUTE
+    FIXED
+
+    Cada uno de ellos tiene lo siguiente:
+
+    Posición inicial 
+      (donde va a aparecer respecto a su flujo cuando se posiciona sin usar offset)
+      Para los tres casos, su posicion inicial es igual a su posicion en el flujo
+
+    Contexto
+      Es el area a partir de la cual se van a mover los elementos con las propiedades offset.
+      
+      relative:   su posicion inicial
+      fixed:      el viewport
+      absolute:   su ancestro posicionado más cercano
+
+    Su espacio en el flujo
+      relative: conserva su espacio
+      absolute: su espacio desaparece
+      fixed:    su espacio desaparece 
+
+    Sus dimensiones (en caso no tengan dimensiones declaradas). Si tuvieran dimensiones previamente declaradas, estas se mantienen en los tres casos.
+
+      relative: conserva sus dimensiones
+      absolute: pierde sus dimensiones y se ajusta al contenido
+      fixed:    pierde sus dimensiones y se ajusta al contenido
+
+ */
+
+  .p-container {
+    /*position: absolute;*/
+    margin-bottom: 2em;
+  }
+ .p-content {
+    position: relative;
+    top: 20px;
+ }
+
+ .main-footer {
+  background: steelblue;
+  color: #fff;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+ }
+
+ .p-container2 {
+  border: 2px solid black;
+  height: 200px;
+  position: fixed;
+  width: 100%;
+ }
+
+ .p-content2 {
+  background: rgba(255,255,0,.5);
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 50px
+ }
+
+ .p-content2 span {
+  background: orange;
+  position: fixed;
+  top: 120px;
+ }
+
+/* 
+  z-index
+
+  Esta propiedad solo aplica a elementos posicionados. Permite definir la posicion en el apilamiento (eje Z). Sus valores son numeros (positivos o negativos)
+
+  De forma predeterminada los elementos que vienen despues en el flujo estan encima en las capas de los que vienes antes. También los hijos están encima en las capas que sus ancestros.
+
+  Tip:
+    Un hijo puede estar detrás de su padre. Solo si el padre no tiene un z-index declarado (los pseudoelementos se consideran hijos).
+
+*/
+
+.z-index-container {
+  width: 500px;
+  height: 500px;
+  border: 3px solid steelblue;
+  margin: 1em auto;
+  position: relative;
+}
+
+[class^="item-"] {
+  width: 160px;
+  height: 160px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 3em;
+  position: absolute;
+}
+
+.item-1 {
+  background: pink;
+  top: 100px;
+  left: 100px;
+  z-index: 999999999999;
+}
+.item-2 {
+  background: teal;
+  top: 200px;
+  left: 200px;
+  z-index: -10;
+}
+.item-3 {
+  background: orange;
+  top: 300px;
+  left: 300px;
+  /*z-index: -20;*/
+}
+
+.item-3 span {
+  background: red;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  z-index: -1;
+}
+
+
+.esfera {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(teal,black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.esfera:after {
+  content:"";
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  box-shadow: 0 0 6px 5px black;
+  z-index: -1;
+}
+
+body {
+  background: linear-gradient(#333,black);
+  min-height: 100vh;
+}

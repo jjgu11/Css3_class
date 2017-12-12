@@ -1,0 +1,73 @@
+/* 
+  Herencia:
+
+  El valor inherit fuerza a un elemento a heredar la propiedad correspondiente de su ancestro más cercano.
+ */
+
+a {
+  color: inherit;
+}
+
+li {
+  color: red;
+}
+
+
+/* 
+  Especificidad
+
+  Es un valor que adquieren los selectores y que determina que regla CSS (o que estilos) se aplican a un elemento cuando existen conflictos.
+
+  !important siempre gana sobre cualquier especificidad. Por eso es que es una muy mala práctica.
+
+  !important > especificidad > cascada
+
+  ¿Cómo se calcula la especifidad?
+
+  Etiqueta              -> 1     0,0,0,1
+  Clases y seudoclases  -> 10    0,0,1,0
+  ID                    -> 100   0,1,0,0
+  Estilos en línea      -> 1000  1,0,0,0
+  
+*/
+
+
+html body p.parrafo#parrafo {
+  /* especifidad: 113*/
+  color: peru;
+}
+
+body p.parrafo#parrafo {
+  /* especifidad: 112*/
+  color: salmon;
+}
+p.parrafo#parrafo {
+  /* especifidad: 111*/
+  color: skyblue;
+}
+
+.parrafo#parrafo {
+  /* especifidad: 110*/
+  color: yellow;
+}
+
+.parrafo {
+  /* especifidad: 10*/
+  color: steelblue;
+}
+
+p#parrafo {
+  /* especifidad: 101*/
+  color: red;
+}
+
+#parrafo {
+  /* especifidad: 100*/
+  color: seagreen;
+}
+
+p {
+  /* especifidad: 1*/
+  color: orange;   
+}
+

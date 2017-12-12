@@ -1,0 +1,118 @@
+/* 
+  Las pseudo clases son selectores condicionales. Es decir que funcionan dentro de ciertas condiciones.
+
+  Por lo general comienzan con dos puntos. Ej.:
+
+  a:hover{
+    color: red;
+  }
+
+
+  Las pseudoclases pueden aplicarse a un selector o funcionar independientemente.
+
+
+  Pseudoclases:
+
+
+    :hover       -> cuando se pasa el cursor por encima
+    :active      -> el instante en el que se hace clic
+    :visited     -> para enlaces que ya han sido visitados
+    :focus       -> para campos de formulario seleccionados
+    :target      -> para destinos internos
+    :empty       -> Selecciona elementos sin contenido
+    ::selection  -> Se usa para darle estilos a la seleccion
+    :not()       -> Se usa para excluir selectores
+
+*/
+
+/*h1:active {
+  color: red;
+}
+
+input:focus {
+  width: 300px;
+}
+
+#destino:target {
+  color: red;
+}
+
+div {
+  width: 300px;
+  height: 100px;
+  background: yellow;
+}
+
+:empty {
+  background: red;
+}
+
+P::selection {
+  background: purple;
+  color: white;
+}
+
+p:not(#destino) {
+  font-style: italic
+}*/
+
+/* 
+
+  :fisrt-child 
+    selecciona al primer hijo
+
+  :last-child;
+    selecciona al ultimo hijo
+
+  :first-of-type
+  :last-of-type
+    similares a los anteriores pero se limitan por el tipo
+
+  nth-child()
+    selecciona determinados elementos segun su aparicion y recibe parámetros:
+      even|odd (pares e impares)
+      numero
+      multiplo de n (selecciona de multiplo en multiplo)
+        Por ejemplo: 3n selecciona de 3 en 3
+      multiplo de n +- algo
+        Ejemplos:
+          3n+1
+          5n-2
+
+    Trucos de nth-child
+
+      Seleccionar los 5 primeros elementos:
+        -n+5
+
+      Seleccionar todos a partir del 5 elemento:
+        n+5
+
+
+ */
+
+/* article p:first-of-type{
+  color: red;
+ }*/
+
+/* p:nth-child(n+5){
+  background: red;
+  color: white;
+ }*/
+
+
+/* 
+
+  nth-last-child
+    Es idéntico a nth-child solo que cuenta al revés.
+
+  nth-of-type
+    Idéntico a nth-child pero restringido a tipos de elementos
+
+  nth-last-of-type
+
+*/
+
+p:nth-last-of-type(3){
+  background: red;
+  color: white;
+}

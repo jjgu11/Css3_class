@@ -1,0 +1,172 @@
+/* 
+  Los selectores indican a qué elemento html se aplicará los estilos.
+
+ */
+
+/* SELECTOR DE ETIQUETA (TAGNAME)
+  Basta con escribir el nombre de la etiqueta HTML. El estilo se aplicará a todas las etiquetas HTML que coincidas.
+*/
+
+h1 {
+  color: red;
+}
+
+p {
+  color: green;
+}
+
+/* Los selectores de etiqueta también se conocen como base y los estilos aplicados a ellos como estilos base. Esto viene de la metodología SMACSS */
+
+
+/* SELECTOR DE CLASE (.) 
+  Selecciona a los elementos que contengan una clase específica. La clase se indica con un punto. Por ejemplo:
+
+  HTML:
+  <p class="alerta">Ha ocurrido un error</p>
+
+  CSS
+  .alerta {
+    background: red;
+  }
+*/
+
+  .alerta {
+    color: red;
+  }
+
+
+/* Selector de ID (#)
+  Se aplica a elementos con un ID especifico (no se considera una buena práctica). Para seleccionar se usa el simbolo # antes del nombre del id
+
+  HTML:
+  <p id="ultimo">Ha ocurrido un error</p>
+
+  CSS
+  #ultimo {
+    background: red;
+  }
+  
+*/
+
+#ultimo {
+  color: purple;
+}
+
+
+/* Selectores descendientes
+  Se usa para seleccionar elementos dentro de otros. Su sintaxis es:
+
+  selector-padre selector-hijo {
+    estilos
+  }
+
+  Ejemplo:;
+
+  HTML:
+  <p>Ha ocurrido un <span>error</span></p>
+
+  CSS
+  p span {
+    background: red;
+  }
+
+*/
+
+p span {
+  background: red;
+  color: #fff;
+}
+
+/* Los selectores descendientes se pueden anidar indefinidamente. Pero no es una buena práctica.
+
+Ejemplos de mala practica con selectores descendientes:
+
+  html body p span {
+    background: red;
+  }
+
+  ul li a {
+    color: green;
+  }
+*/
+
+ul a {
+  color: red;
+}
+
+.submenu a {
+  color: green;
+}
+
+
+/* 
+  Selector hijo directo: x > y  (x es el padre, y es el hijo directo).
+
+*/
+
+.menu > li > a {
+  color: blue;
+}
+
+
+
+/* Herencia 
+
+  Muchos estilos son heredados de los padres a los hijos. Ejemplo:
+
+  HTML:
+
+  <p><span>Hola</span> <a href="#">mundo</a></p>
+
+  CSS:
+
+  p {
+    color: red;
+  }
+
+  ¿¿¿¿¿¿EL ENLACE DENTRO DEL PÁRRAFO ES ROJO????
+*/
+
+
+/* Cascada
+
+  CSS - Cascade Style Sheet
+  Todo estilo sobreescribe al que venga detrás
+
+  p {
+    color: red;
+    color: green;
+  }
+
+  Las cascadas se usan mucho como fallbacks para navegadores antiguos.
+
+  div {
+    background: green;
+    background: linear-gradient(green,red);
+  }
+
+  Tambien se usa la cascada para ahorrar código
+
+  .next,
+  .prev {
+    color: white;
+    display: block;
+    float: right;
+  }
+
+  .prev {
+    float: left;
+  }
+
+*/
+
+/* 
+  Estilos del navegador
+
+  Los navegadores tienen su propia hoja de estilos interna. Es recomendable sobreescribir estos estilos ya que no son iguales en todos navegadores.
+
+  Puedes hacerlo a mano. O usar una libreria. Existen dos:
+
+    * reset css
+    * normalize
+ */

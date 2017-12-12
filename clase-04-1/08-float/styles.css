@@ -1,0 +1,54 @@
+/* 
+  Float flota un elemento hacia la izquierda o derecha sacándolo del flujo y haciendo que el contenido siguiente lo rodee si es posible.
+
+  float: right | left | none ;
+*/
+
+div {
+  background: yellow;
+}
+
+img {
+  float: right;
+  /*margin-left: 1em;*/
+}
+
+p {
+  /*clear: right;*/
+}
+
+
+/* 
+  Colapsado del contendor
+
+  El elemento flotado pierde su altura respecto a su contenedor, por lo tanto, deja de contenerlo.
+
+  Soluciones:
+
+  1. overflow: hidden;
+  2. display: table;
+  3. Un elemento vacio (no recomendado)
+
+ */
+
+div {
+  display: table;
+}
+
+
+/* 
+
+  Propiedad clear
+
+  Impide que un elemento flote en el sentido indicado.
+
+  clear:
+    right (nadie flotara a la derecha de este elemento)
+    left  (nadie flotara a la izquierda de este elemento)
+    both (nadie flotara a los dados de este elemento)
+
+ */
+
+
+
+ 

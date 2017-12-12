@@ -1,0 +1,70 @@
+/* 
+  Selector universal es un asterisco (*) y selecciona a todos los elementos. El uso más común actualmente de este selector es:
+
+  * {
+    box-sizing: border-box;
+  }
+
+*/
+
+/* 
+  Selectores hermanos (dos tipos):
+    1. Hermano siguiente (singular) a + b
+      B esta justo después de A. Se selecciona B.
+    2. Hermanos siguientes (plural) a ~ b
+      B (o varios B) están después de A, no importa si entre ellos hay otros elementos. Se selecciona a todos los B
+  
+  En CSS no se pueden seleccionar hermanos hacia atrás y tampoco padres.
+
+*/
+
+h1 ~ p {
+  color: red;
+}
+
+h2 + div p {
+  color: green;
+}
+
+/* 
+  Selectores de atributos
+  Un atributo se selecciona entre corchetes []
+*/
+
+/*Se puede indicar solo el atributo*/
+[class] {
+  /*color: red;*/
+}
+
+/*O el atributo y su valor*/
+[target="_blank"] {
+  font-style: italic;
+}
+
+/* Los selectores de atributos aceptan comodines:
+
+  $   -> termina con
+  ^   -> comienza con
+  *   -> contiene a
+  ~   -> tarea
+  |   -> tarea
+  
+  ej.:
+
+    [src$="jpg"]
+    [href^="http://"]
+    [class*="icon-"]
+*/
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img[src$="png"]{
+  border: 2px solid black;
+}
+
+[class*="parrafo"] {
+  color: red;
+}

@@ -1,0 +1,86 @@
+/* 
+  La propiedad abreviada (shorthand) "font".
+    Agrupa a las siguientes:
+
+      font-weight
+      font-style
+      * font-size / line-height
+      * font-family
+
+  * obligatorios
+
+  Es obligatorio que estén al menos font-size y font-family (font-family siempre al final).
+
+  Si se incluye line-height debe ir después de font-size y separado por un slash (/)
+
+ */
+
+ h1 {
+  /*font-style: normal;
+  font-weight: bold;
+  font-family: Georgia,serif;
+  line-height: 2.5em;
+  font-size: 1.5em;*/
+  font: normal bold 1.5em/2.5em Georgia,serif;
+ }
+
+div {
+  width: 250px;
+  background: yellow;
+}
+
+/* 
+  Controlar el flujo y espaciado de los textos
+  
+  Separacion de letras y palabras:
+    letter-spacing
+    word-spacing  
+
+  word-break: break-all | keep-all | none; 
+    corta las palabras donde termina el contenedor
+
+  word-wrap: break-word
+    corta las palabras que son más anchas que el contenedor
+
+  white-space (controla los espacios en blanco y saltos de linea)
+    normal 
+      los ignora)
+    pre 
+      (los trata como <pre></pre>)
+    nowrap 
+      (no hay saltos de línea ni espacios)
+    pre-wrap 
+      igual que pre pero permite saltos de linea al final del contenedor;
+    pre-line
+      respeta los saltos de línea pero omite los espacios
+
+  text-overflow: clip | ellipsis
+      determina si un texto que se escapa de su contenedor se cortará en seco (clip) o se mostrarán tres puntos (ellipsis). Solo funciona si al contenedor se le aplica: overflow:hidden (para que oculte todo el contenido que escapa de el).
+
+*/
+
+div {
+  /*font-style: italic;*/
+ /* letter-spacing: .03em;
+  word-spacing: .1em;*/
+  /*text-align: justify;*/
+  /*word-break: break-all;*/
+  /*hypens: auto;*/
+  word-wrap: break-word;
+  /*white-space: nowrap;*/
+  white-space: pre-wrap;
+}
+
+.pre {
+  /*white-space: pre-wrap;*/
+  white-space: pre-line;
+}
+
+.code {
+  width: 300px;
+  background: yellow;
+  white-space: pre;
+  /*word-wrap: break-word;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

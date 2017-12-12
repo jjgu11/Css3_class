@@ -1,0 +1,15 @@
+/* 
+  El padding es la separacion entre el contenido de una caja y el borde
+
+  Tips:
+
+    1. Los paddings no pueden ser negativos
+    2. Los padding no colapsan
+    3. Se pueden usar para crear cajas con proporciones de aspecto.
+
+ */
+
+ div {
+  background: yellow;
+  padding-bottom: 50%;
+ }

@@ -1,0 +1,65 @@
+body {
+  background-color: #111;
+  color: #eee;
+}
+
+.disc {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 20px solid;
+  border-color: steelblue pink seagreen tomato;
+  animation: girar 2s infinite linear;
+}
+
+.star {
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  animation: brillar 1s infinite linear alternate;
+}
+
+.star:nth-of-type(2){
+  left: 10%;
+  top: 60%;
+}
+
+@keyframes brillar {
+  from {
+    box-shadow: 0 0 1px 0 #fff;
+  }
+  to {
+    box-shadow: 0 0 8px 8px rgba(255,255,255,.3);
+  }
+}
+
+
+@keyframes girar {
+  from {
+    transform: rotate(0);
+    /*background-color: red;*/
+  }
+
+  to {
+    transform: rotate(360deg);
+    /*background-color: green;*/
+    border-color: blue red green orange;
+  }
+}
+
+
+img {
+  animation: girar-imagen 2s infinite alternate linear;
+}
+
+@keyframes girar-imagen{
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}

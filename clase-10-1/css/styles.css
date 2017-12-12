@@ -1,0 +1,36 @@
+body {
+  background: purple;
+  color: #000; }
+
+ul {
+  list-style: none; }
+  ul li {
+    display: inline-block; }
+
+p {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic; }
+
+div p, div a {
+  font-family: Georgia, serif; }
+
+h1 {
+  color: red; }
+  h1:hover {
+    color: blue; }
+
+.bloque {
+  width: 20px; }
+  .bloque-imagen {
+    width: 90%; }
+  .imagen .bloque {
+    width: 100%; }
+
+.main-menu, .main-menu--footer {
+  background: steelblue;
+  color: #fff;
+  line-height: 2em; }
+
+.main-menu--footer {
+  background: black; }

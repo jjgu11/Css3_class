@@ -1,0 +1,32 @@
+[class^="container"] {
+  border: 1px solid black;
+  display: flex;
+}
+
+[class^="item"]{
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class^="item"]:nth-child(even){
+  background: lightblue;
+}
+
+.item {
+  height: 60px;
+  width: 60px;
+}
+
+.item:nth-child(2) {
+  order: -1;
+}
+
+.item:last-child{
+  align-self: center;
+}
+
+.container {
+  height: 200px
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Flujo</h1>
+    <h2>flex-wrap</h2>
+    <p>Con esta propiedad se determina si los items se colocan en una sola fila (linea) o en varias. Se aplica al container.</p>
+    <ul>
+      <li>flex-wrap: no-wrap (default, una sola linea)</li>
+      <li>flex-wrap: wrap (varias lineas)</li>
+      <li>flex-wrap: wrap-reverse (varias lineas en sentido inverso).</li>
+    </ul>
+    <h2>order</h2>
+    <p>Esta propiedad permite mover un elemento en el "flujo visual" (no lo mueve en el html). Todos los elementos comienzan con un order: 0, y a mayor numero el elemento aparece después. Se aplica a los items.</p>
+
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+
+    <h2>align-content</h2>
+    <p>Esta propiedad es igual a align-items pero se aplica cuando los items están en varias lineas (flex-wrap:wrap). Se aplica al contenedor</p>
+    <ul>
+      <li>flex-start</li>
+      <li>flex-end</li>
+      <li>center</li>
+      <li>baseline</li>
+    </ul>
+    <h3>align-self</h3>
+    <p>Sirve para colocar un elemento en una posicion especifica del cross-axis. Se aplica a un elemento específico.</p>
+    <ul>
+      <li>flex-start</li>
+      <li>flex-end</li>
+      <li>center</li>
+    </ul>
+  </body>
+</html>

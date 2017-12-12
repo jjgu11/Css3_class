@@ -1,0 +1,70 @@
+// Variables
+// Sirven para almacenar valores
+// se escriben con el signo dolar
+
+$bg-color: purple;
+$color: #000;
+
+body {
+  background: $bg-color;
+  color: $color;
+}
+
+// Anidamiento (nested)
+// Los selectores pueden anidarse para indicar hijos
+
+ul {
+  list-style: none;
+  
+  li {
+    display: inline-block;
+  }
+}
+
+// Se pueden anidar propiedades
+
+p {
+  font: {
+    family: Arial, sans-serif;
+    weight: bold;
+    style: italic;
+  }
+}
+
+// Se pueden juntar selectores al anidar
+
+div {
+  p, a {
+    font-family: Georgia, serif;
+  }
+}
+
+// Se puede usar el símbolo "&" para repetir al selector padre
+
+h1 {
+  color: red;
+  &:hover{
+    color: blue;
+  }
+}
+
+.bloque {
+  width: 20px;
+  &-imagen {
+    width: 90%;
+  }
+  .imagen & {
+    width: 100%;
+  }
+}
+
+.main-menu {
+  background: steelblue;
+  color: #fff;
+  line-height: 2em;
+}
+
+.main-menu--footer {
+  @extend .main-menu;
+  background: black;
+}

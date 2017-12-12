@@ -1,0 +1,29 @@
+/*
+Los colores en CSS tienen varias forma de escribirse. Las más comunes son:
+
+  1. keyword
+    http://www.colors.commutercreative.com
+    
+  2. hexadecimales
+    Es una notacion que agrupa los tres canales en pares (red, green, blue).
+
+    #000000;
+    #ffffff;
+
+    Si las parejas tienen el mismo valor se puede escribir de forma abreviada:
+
+    #ff3355 = #f35;
+
+  3. Notacion rgb()
+    Son los tres canales separados por comas. La diferencia es que los canales van de 0 a 255.
+
+  4. Notacion rgba()
+    Igual que la notacion anterior pero añade un canal alpha (opacidad) que va de 0 a 1.
+
+*/
+
+body {
+  background: #f35;
+  background: rgb(50,200,120);
+  background: rgba(50,200,120,.5);
+}

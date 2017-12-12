@@ -1,0 +1,74 @@
+/* 
+  Selector universal (selecciona a todo)
+  * {}
+
+  Selectores hermanos
+    Hermano siguiente (singular): a + b
+      Donde a y b son selectores hijos del mismo padre y b está justo después de a. En este caso se selecciona b.
+      
+    Hermanos siguientes (plural): a ~ b
+      Donde a y b son elementos hermanos que no necesariamente están juntos. Aunque b siempre está después de a. Se selecciona "b".
+      
+*/
+
+h1 ~ div {
+  color: red;
+}
+
+
+/* 
+  Selectores de atributos
+
+  Un atributo se selecciona en CSS con corchetes
+
+  [atributo]
+
+ */
+
+ [id] {
+  color: red;
+ }
+
+ [class] {
+  color: green;
+ }
+
+ [href]{
+  color: tomato;
+ }
+
+ .contacto [required] {
+  background: red;
+ }
+
+
+ /* 
+  Se puede seleccionar un atributo con un valor específico
+
+  [id="hola"] == #hola
+
+  Se pueden buscar patrones:
+
+    ^ (comienza con: alt 94)
+    $ (termina con)
+    * (contiene) 
+*/
+
+
+[href$="jpg"]{
+  background: yellow;
+}
+
+[id^="ti"] {
+  background: green;
+}
+
+[class*="hola-"] {
+  font-style: italic;
+}
+
+.hola-mundo,
+.hola-mama,
+.hola-amigos {
+
+}

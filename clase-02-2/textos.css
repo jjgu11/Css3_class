@@ -1,0 +1,162 @@
+/* 
+  Textos
+
+  Los tipos de letras en el mundo profesional se conocen como familias de fuentes o tipografía.
+
+  Familias tipográficas
+    Son fuentes específicas con nombres "comerciales".
+      Arial, Verdana, Times New Roman, Helvetica, Ubuntu.  
+
+  Familias genéricas
+    Son grupos de fuentes según sus características.
+
+    serif
+      Con adorno (serifa) en los remates
+    sans-serif
+      Sin adorno en los remates (de palo seco)
+    cursive
+      Letras inclinadas (algunas falsas, fake) y otras provienen de la fuente
+    monospace
+      Cada caracter ocupa el mismo espacio horizontal (ideal para escribir código)
+
+  Si se asigna una familia tipográfica en un estilo, esta deberá estar instalada en el sistema operativo del cliente sino no la verá.
+
+  Dos maneras de solucionarlo:
+
+  1. Definir fuentes alternativas.
+    Se separan por comas. Si la primera no es encontrada, se busca la segunda y así sucesivamente. Se recomienda terminar con una fuente genérica.
+    * Si el nombre de una fuente tiene más de una palabra se debe encerrar entre comillas.
+    ej.:
+     p {
+        font-family: "Times New Roman", serif;
+     }
+  2. Usar un proveedor de fuentes en internet (Google Fonts y Adobe Typekit)
+    http://google.com/fonts
+    https://typekit.com
+  
+  3. Almacenar las fuentes en un servidor propio y usar la regla @font-face { } Sin embargo para evitarse el trabajo de convertir los formatos (para el cross-browser) se recomienda usar generadores como Font Squirrel o Font2web.
+    http://www.fontsquirrel.com/
+    http://www.font2web.com/
+    
+
+ */
+
+ @font-face {
+    font-family: 'starwars';
+    src: url('fonts/stjedise-webfont.eot');
+    src: url('fonts/stjedise-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/stjedise-webfont.woff2') format('woff2'),
+         url('fonts/stjedise-webfont.woff') format('woff'),
+         url('fonts/stjedise-webfont.ttf') format('truetype'),
+         url('fonts/stjedise-webfont.svg#starjedi_special_editionRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+ h1 {
+  font-family: starwars, arial;
+  font-weight: normal;
+  color: #fff;
+ }
+ body {
+  background: black;
+  margin: 0;
+ }
+
+
+/* 
+
+  Tamaños de las fuentes
+  
+  Unidades de medida para definir el tamaño de la fuente
+
+  px   -> tamaño absoluto
+  em   -> tamaño relativo al contexto
+  rem  -> tamaño relativo al <html></html>
+  %    -> tamaño normal de una fuente
+  vh   -> 1vh = 1% del alto (height) del viewport
+  vw   -> 1vw = 1% del ancho (width) del viewport
+
+
+*/
+
+html {
+  /*font-size: 30px;*/
+}
+
+ h1 {
+  font-size: 1.5em;
+ }
+
+ p {
+  color: white;
+  font-size: 2em;
+ }
+
+ p span {
+  font-size: 2rem;
+ }
+
+ li {
+  text-align: left;
+  color: #fff;
+  font-size: .7rem;
+ }
+
+ /* El body por defecto tiene un font-size: 16px */
+
+
+ span {
+  color: white;
+  font-family: starwars;
+  font-size: 30vh;
+  line-height: 100vh;
+  text-align: center;
+  display: block;
+ }
+
+
+ /* 
+
+  Otras propiedades de los textos:
+
+  line-height: determina la altura de la linea;
+  */
+
+
+  p {
+    line-height: 1.5;
+    text-transform: capitalize;
+    text-align: justify;
+  }
+
+  div {
+    width: 300px;
+    height: 100px;
+    background: yellow;
+    font-size: 3em;
+    text-align: center;
+    line-height: 100px;
+    text-transform: capitalize;
+    letter-spacing: 20px;
+  }
+
+
+  /* 
+    Text-transform: lowercase (minusculas) | uppercase (mayusculas) | capitalize (primera letra de cada palabra en mayusculas);
+
+    text-align: center | left | right | justify;
+    (solo se aplica a elementos block)
+
+
+    font-weight: bold (negritas) | normal;
+
+    font-style: italic (cursivas) | normal;
+
+    text-decoration: underline (subrayado) | none (sin subrayado);
+
+    letter-spacing: value; (con una unidad determina la separacion de las letras)
+
+    text-indent: mueve la primera linea de un "bloque" de texto;
+
+   */

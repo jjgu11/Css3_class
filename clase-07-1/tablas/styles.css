@@ -1,0 +1,48 @@
+/* 
+De forma predeterminada, las tablas se ajustan en su ancho al contenido
+
+  table-layout 
+    especifica como se distribuirá el espacio de las columnas. 
+    Valores
+      automatic (default)
+      fixed: el ancho de la tabla se define con width. Si no se especifica un ancho para las columnas, serán uniformes.
+
+  caption-side
+    Indica si el caption se mostrará arriba (top, default) o abajo (bottom)
+
+  border-spacing: x y;
+    Indica la separacion entre las celdas (solo aplica si la tabla tiene border-collapse: separate)
+
+  border-collapse
+    Indica si los bordes de la tabla y las celdas se unirán (collapse) o estarán separados (separate, default)
+  
+*/
+
+.table {
+  /*background: yellow;*/
+  table-layout: fixed;
+  width: 100%;
+  /*caption-side: bottom;*/
+  border-spacing: 1em;
+  border: 1px solid #999;
+  border-collapse: collapse;
+}
+.table caption {
+  color: red;
+  font-size: 2em;
+}
+.table td,
+.table th {
+  text-align: center;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.col1 {
+  /*background: green;*/
+  width: 250px;
+}
+
+.col2 {
+  /*background: red;*/
+}

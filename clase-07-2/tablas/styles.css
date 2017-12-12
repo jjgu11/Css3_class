@@ -1,0 +1,47 @@
+/* 
+  table-layout
+    define como se maneja las dimensiones de la tabla y sus columnas. 
+    valores
+      automatic (default)
+      fixed
+
+    Fixed depende de un ancho declarado para la tabla. Además, si no se declara un ancho para las columnas estas se distribuyen uniformemente.
+
+    caption-side: top (default) | bottom
+      define donde se coloca el caption respecto a la tabla
+
+    border-collapse: separate (default) | collapse
+      define si las celdas estaran separadas (separate) o juntas (collapse)
+
+    border-spacing: valueX valueY
+      indica la separacion entre las celdas, si es que la tabla tiene border-collapse: separate
+*/
+
+
+.table {
+  /*border: 1px solid #999;*/
+  table-layout: fixed;
+  width: 100%;
+  caption-side: bottom;
+  border-spacing: 1em;
+  border-collapse: separate;
+  background: yellow;
+}
+
+.col1 {
+  /*background: yellow;*/
+  width: 40%;
+}
+
+.table caption {
+  font-size: 1.5em;
+  color: red;
+  line-height: 1.5;
+}
+
+.table td,
+.table th {
+  /*border: 1px solid #999;*/
+  text-align: center;
+  background: white;
+}

@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  border-bottom: 5px solid grey;
+  height: 100px;
+  transform:rotate(-5deg);
+}
+.box {
+  background: red;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: calc(100% -  100px);
+  transition: all 2s linear;
+}
+
+.container:hover .box{
+  right: 0;
+}
+
+.container-ring {
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-around;
+}
+
+[class^="ring"]{
+  width: 150px;
+  height: 150px;
+  border: 10px solid;
+  border-color: green red;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.container-ring:hover [class^="ring"] {
+  transform: rotate(720deg);
+}

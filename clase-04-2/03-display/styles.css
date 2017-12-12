@@ -1,0 +1,91 @@
+/*
+DISPLAY
+
+  Es una propiedad que define como se comportará una caja. De forma predeterminada existen dos tipos de elementos:
+
+    block-level
+    inline-level
+    
+  Los elementos inline:
+    1. No aceptan width y height
+    2. Aceptan margen y padding pero no altera el flujo (los verticales, los horizontales si lo alteran)
+
+*/
+
+
+.inline {
+  background: yellow;
+  width: 100px;
+  height: 50px;
+  padding: 1em;
+  margin: 1em;
+  /*display: inline-block;*/
+}
+
+.block {
+  background: pink;
+  width: 500px;
+  height: 50px;
+  margin-bottom: 5em;
+  display: none;
+  /*visibility: hidden;*/
+}
+
+
+/* 
+
+  Valores de display:
+
+  display:
+    inline (default)
+    block
+    inline-block
+      A un mismo elemento le da las propiedades de un elemento inline y de un elemento block.
+    table
+      Imita el layout de una tabla
+
+      table-row
+      table-cell
+      table-caption
+      table-header-group
+      table-footer-group
+
+    none
+
+    CSS3:
+      flex
+      grid
+
+*/
+
+
+.table {
+  display: table;
+}
+
+.caption {
+  display: table-caption;
+}
+.cell {
+  display: table-cell;
+}
+
+.cell:nth-child(even) {
+  background: yellow;
+}
+.cell:nth-child(odd) {
+  background: pink;
+}
+
+.footer {
+  display: table-footer-group;
+}
+
+
+/* 
+  display: none;
+
+    desaparece un elemento del flujo
+    igual se carga el elemento (y sus assets)
+
+ */

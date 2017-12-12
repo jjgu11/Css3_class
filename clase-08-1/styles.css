@@ -1,0 +1,262 @@
+/* 
+Flexbox es un nuevo modelo de layout que permite que las cajas sean flexibles en sus dimensiones y otras cosas:
+  * Se pueden ordenar los elementos en vertical y en horizontal.
+  * Se puede cambiar la posicion de un elemento en el flujo sin alterar el HTML.
+  * Se puede controlar el flujo y direccion de los elementos.
+  
+  TIP: El pading y margin nunca colapsan ni se agrandan en flexbox.
+*/
+
+/* 
+  1. flex-container flex-item
+  El flex-container (contenedor) define el contexto para los flex-items (hijos). El contexto es el area rectangular respecto a la cual se calculan las posiciones y dimensiones de los flex-items.
+
+    * Si un flex-container tiene como hijo solo a un texto (sin un elemento intermedio), el texto en sí se comporta como un flex-item.
+
+    Ej.
+      <p class="container">Hola Mundo</p>
+
+      .container {
+        display: flex;
+      }
+
+    * Position es capaz de romper el flujo de flexbox.
+
+    * Un flex-item puede ser a la vez un flex-container
+*/
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  /*flex-wrap: wrap;*/
+  /*display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.p-container {
+  margin: 0;
+  background: yellow;
+  width: 80%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 
+
+2. EJES (MAIN - PRINCIPAL Y CROSS - SECUNDARIO)
+
+  Cuando se define un contexto para flexbox, se crean dos ejes internos: el main axis (principal) y el cross axis (secundario).
+
+  Main axis   (horizontal por defecto)
+  Cross axis  (vertical por defecto)
+
+  Los elementos (flex-items) se alinean de forma predeterminada respecto al main axis
+*/
+
+h1 {
+  background: lightblue;
+  margin: 0;
+}
+
+p {
+  background: pink;
+  margin: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+}
+
+/* 
+
+  Alterar el sentido de los ejes (flex-direction)
+
+  flex-direction: 
+    row             
+      (default left to right - main axis horizontal)
+    row-reverse     
+      (right to left - main axis horizontal)
+    column          
+      (top to bottom - main axis vertical)
+    column-reverse  
+      (bottom to top - main axis vertical)
+ */
+
+/* 
+  ALINEACION EN EL MAIN AXIS
+  
+  *Se aplica al container
+
+  justify-content:
+    flex-start       
+      (inicio del eje)
+    flex-end         
+      (final del eje)
+    center           
+      (centro del eje)
+    space-between    
+      (espacio sobrante distribuido entre los elementos)
+    space-around     
+      (espacio sobrante distribuido alrededor de los elementos)
+
+*/
+
+
+/* 
+  ALINEACIÓN EN EL CROSS AXIS
+
+  * Se aplica al container
+
+  align-items (para una sola línea)
+  align-content (para varias lineas)
+    
+    stretch       (default, ocupa todo el cross size)
+    flex-start
+    flex-end
+    center
+    baseline
+
+*/
+
+
+div {
+  /*flex: 1 0 120px;*/
+  /*flex-basis: 80%;*/
+  /*width: 200px;*/
+  /*height: 50px;*/
+/*  margin: 1em;
+  background: pink*/
+}
+
+/* 
+  Dimesiones de los flex-items
+
+  * El modelo de caja se sigue aplicando
+  * Flex-basis define el tamaño base principal del elemento (puede susituir a width o height).
+  * Flex-basis siempre gana sobre with o height (el que corresponda) salvo que su valor sea "auto".
+
+  ¿Como se calculan las dimensiones de los flex-items?
+
+  CROSS-SIZE
+    * Si tiene un tamaño definido, este se respeta
+    * Si no se ha definido se utilizará el tamaño disponible total 
+    * Si no se ha definido pero no se usa align-items: stretch se ajustará al contenido
+
+  MAIN-SIZE
+    *flex-basis con un valor diferente a auto siempre gana.
+    *Las cajas podrían crecer o encongerse.
+
+
+    flex-grow (crecer)
+    flex-shrink (encogerse)
+
+    Tanto flex-grow como flex-shrink aceptan como valores números enteros positivos que determinan cuantas unidades crecerá el elemento (flex-grow) o se encogerá el elemento (flex-shrink)
+
+    flex-grow: 5;    (crecerá 5 unidades)
+    flex-shrink: 2;  (se encogerá 2 unidades)
+
+    ¿Como se calcula el valor de cada unidad?
+
+    * espacio disponible / numero total de unidades
+
+    * espacio disponible = espacio total - espacio ocupado
+
+    * espacio ocupado = espacio total de los items + margenes totales
+
+
+    Ejemplo:
+
+    .container {
+      display: flex;
+      width: 500px;
+    }
+
+    .item-1 {
+      flex-basis: 100px;
+      flex-grow: 3;
+    }
+
+    .item-2 {
+      flex-basis: 200px;
+      flex-grow: 1;
+    }
+
+    Numero total de unidades: 3 + 1
+    Espacio total:            500px
+    Espacio ocupado           300px
+    Espacio disponible        200px
+    Unidad                    200px / 4 = 50px
+
+    Finalmente: el item-1 mide 250px y el item-2 mide 250px;
+*/
+
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.item-1 {
+  /*flex-basis: 200px;
+  flex-grow: 0;*/
+  flex: 0 0 200px;
+  background: lightblue;
+  height: 200px;
+}
+
+.item-2 {
+  /*flex-basis: auto;
+  flex-grow: 1;*/
+  flex: 1 0 auto;
+  background: pink;
+}
+
+
+/* 
+
+  Shorthand "flex"
+
+  flex: flex-grow flex-shrink flex-basis;
+  flex: auto (1 1 auto);
+  flex: none (0 0 auto);
+  flex: N    (N N auto);
+
+
+*/
+
+
+/* 
+  flex-wrap: 
+    no-wrap        (todos los items en una linea)
+    wrap           (los items saltan de linea)
+    wrap-reverse   (los items saltan pero se ordenan en sentido inverso)
+
+
+ */
+
+ div {
+  flex: 0 1 500px;
+  background: yellow;
+ }
+
+
+
+ /* 
+
+  Order: define la posicion de un elemento en "flujo visual";
+
+  Todos los flex-items por defecto tienen order: 0; pero se puede cambiar su valor y a menor valor aparecen antes en pantalla.
+
+
+  */
+
+  div:nth-child(2) {
+    background: red;
+    order: -1;
+  }

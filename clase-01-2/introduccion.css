@@ -1,0 +1,42 @@
+/* 
+  COMO VINCULAR HTML CON CSS  
+  Existen 4 métodos:
+    1. <link>
+      La etiqueta link conecta al HTML con un recurso externo. La sintaxis para conectar css es (recomendable en el head):
+
+      <link rel="stylesheet" href="ruta/archivo.css">
+
+      En HTML5 no es necesario type="text/css"
+
+    2. <style></style>
+      La etiqueta <style></style> permite embeber código css dentro de html. Se recomienda ponerla dentro de head.
+
+    3. @import
+      La regla @import añade una hoja de estilos externa dentro de otra. Por lo tanto, si se usa en HTML, debe estar dentro de la etiqueta <style></style>
+
+      Su sintaxis es:
+
+      @import url(ruta/archivo.css);
+      @import url("ruta/archivo.css");
+
+      *Las comillas en la ruta son opcionales
+
+    4. style=""
+      El atributo style permite insertar estilos en un elemento específico de HTML.
+      Su sintaxis es:
+
+      <tag style="estilos..."></tag>
+
+      Ejemplo:
+
+      <h1 style="color: red">Curso CSS3 Desde Cero</h1>
+*/
+
+
+body {
+  background: green;
+}
+
+h1 {
+  color: pink;
+}

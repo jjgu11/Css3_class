@@ -1,0 +1,82 @@
+/* 
+  CONECTAR CSS Y HTML
+    1. <link>
+      En el head del HTML se inserta un elemento <link> que haga referencia al archivo css.
+  
+      <link rel="stylesheet" href="ruta/archivo.css">
+
+      * En HTML5 ya no se necesita indicar type="text/css"
+
+      Este es el método recomendado
+
+    2. <style>
+      El elemento style se coloca dentro del head del HTML y permite embeber código css.  
+
+      <style>
+        codigo css
+      </style>
+
+    3. @import      
+        En el head se llama al archivo css como parámetro de la función url.
+        @import url(ruta/archivo.css)
+
+
+    4. style=""
+      El atributo style permite añadir css a elementos específicos. También se le llama estilos en línea (inline styles).
+
+ */
+
+
+body {
+  background: red;
+}
+
+
+/*
+SINTAXIS DE CSS
+
+1. Regla
+  Una regla CSS es un bloque que contiene a un selector (o varios) y su respectivo bloque de declaración. Tiene el siguiente formato:
+
+  selector {
+    propiedad1: valor1;
+    propiedad2: valor2;
+  }
+
+2. Selector
+  Es un término que indica a qué elemento html se aplicarán los estilos correspondientes.
+
+  selector {
+    // estilos que se aplicarán al selector
+  }
+
+3. Declaración (y bloque de declaración)
+  Una declaración es un estilo único. Contiene una propiedad y un valor (o varios). En el siguiente ejemplo hay dos declaraciones:
+
+  selector {
+    propiedad1: valor1;
+    propiedad2: valor2;
+  }
+
+  El bloque de declaracion es el que envuelve a todas las declaraciones y está limitado por las llaves.
+
+
+4. Propiedad
+    Una propiedad indica un estilo de un elemento. Ej:
+
+    color (propiedad)
+
+5. Valor
+    Indica el valor que tomará una propiedad. Ej
+    
+    yellow (valor)
+
+
+Ejemplo de regla CSS:
+
+  h1 {
+    color: yellow;
+    background: black;
+  }
+
+*/

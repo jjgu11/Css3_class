@@ -1,0 +1,25 @@
+/* 
+  Los degradados permiten crear un fondo de varios colores. Existen dos tipos: linear y radial;
+    linear-gradient(color1,color2,color3)
+    radial-gradient(color1,color2,color3)
+
+  Por especificacion, los degrados son background-image. Sin embargo, se puede usar el shorthand background.
+*/
+
+div {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  background: linear-gradient(yellow,red,black);
+  background: radial-gradient(yellow,red,black);
+  background: linear-gradient(yellow 150px,red 150px,black);
+}
+
+/* 
+  Tip
+
+  A cada color se le puede especificar su parada.
+  linear-gradient(color1 10px, color2 50px)
+  radial-gradient(color1 10%, color2 50%)
+
+*/

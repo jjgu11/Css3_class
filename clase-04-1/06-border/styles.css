@@ -1,0 +1,88 @@
+/* 
+ 
+  Shorthands para idicar los cuatro valores:
+
+  border-width:
+    define el grosor del borde
+  border-color
+    define el color
+  border-style
+    define el estilo
+      solid (linea solida)
+      dashed (linea cortada)
+      dotted (puntos)
+
+ existen 4 propiedades:
+
+  border-top: border-width border-style border-color;
+  border-right: border-width border-style border-color;
+  border-bottom: border-width border-style border-color
+  border-left: border-width border-style border-color;
+
+  El shorthand border
+
+  border: border-width border-style border-color;
+ */
+
+
+ .box {
+  background: red;
+  width: 500px;
+  height: 300px;
+  border: 10px solid black;
+  border-color: green blue orange black;
+ }
+
+
+
+ /* 
+  BORDER RADIUS
+
+  Determina el redondeado de una esquina
+
+  La forma especifica es asi:
+
+  border-top-left-radius: x y;
+
+
+
+  */
+
+  .box {
+    /*border-bottom-left-radius: 100px 200px;*/
+  }
+
+
+  /* 
+
+  Existe un shorthand 
+
+  border-radius: (comienza en la esquina superior izquierda y va en el sentido de las agujas del reloj)
+
+
+*/
+
+  .box {
+    /*border-radius: 100px 50px 200px;*/
+  }
+
+
+  /* 
+
+    Si se añade un slash / el grupo de valores a la izquierda es para X y a la derecha para Y
+
+   */
+
+   .box {
+    border-radius: 50px  100px / 70px;
+    display: none;
+   }
+
+   .rueda {
+    width: 200px;
+    height: 200px;
+    background: red;
+    border-radius: 50%;
+    border: 10px dotted red;
+    background-clip: content-box;
+   }

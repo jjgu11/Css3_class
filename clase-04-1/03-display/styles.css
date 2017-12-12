@@ -1,0 +1,89 @@
+/* 
+  Display
+
+  Es una propiedad que controla como se muestran los elementos en la pantalla.
+
+  display:
+
+    inline
+      Define un elemento como inline
+
+    block
+      Define un elemento como block
+
+    inline-block
+      Define un elemento con propiedades de inline y block a la vez
+
+    table
+      Imita el layout de una tabla
+
+    none
+      Desaparece un elemento del flujo
+
+    
+    flex
+      cajas flexibles
+    grid
+      grids (filas y columnas)
+*/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  /*display: block;*/
+}
+
+
+/* 
+  Tips:
+
+  Los elementos inline no soportan width y height.
+  Los elementos inline pueden tener padding y margin pero no alteran el flujo vertical de elementos.
+
+  Si se quiere tener las propiedades de bloque (width, height, padding, margin) sin perder el inline-level se puede usar:
+
+    display: inline-block;
+  
+ */
+
+
+ span {
+  background: yellow;
+  padding: 1em;
+  margin: 1em;
+  width: 120px;
+  height: 30px;
+  display: inline-block;
+ }
+
+
+
+ /* 
+
+  Los elementos inline e inline-block tiene line-height que pueden alterar la altura.
+
+  
+
+  */
+
+  .image {
+    width: 23%;
+    margin: 1%;
+    float: left;
+    /*background: yellow;*/
+    /*line-height: 0;*/
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .image p {
+    text-align: center;
+    margin: 0;
+    line-height: 2;
+  }

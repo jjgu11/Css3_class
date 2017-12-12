@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  background: red; }
+  @media screen and (min-width: 400px) {
+    body {
+      background: pink; } }
+  @media screen and (min-width: 600px) {
+    body {
+      background: yellow; } }
+
+code {
+  display: block;
+  overflow: auto;
+  padding: .5em 0 .9em;
+  background: rgba(173, 216, 230, 0.5);
+  font-size: 1.4em; }

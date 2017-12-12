@@ -1,0 +1,140 @@
+/* 
+  Existen tres propiedades específicas para las listas:
+
+      list-style-position
+        outside (default)
+        inside
+
+      list-style-image (no recomendado, se prefiere pseudo elementos o background-image)
+        url()
+
+      list-style-type
+        disc
+        circle
+        square
+        decimal
+        decimal-leading-zero
+        lower-alpha
+        lower-roman
+        lower-greek
+        lower-latin
+        upper-alpha
+        upper-roman
+        upper-latin
+
+
+  Y un shorthand que agrupa a las tres:
+
+      list-style
+
+  TIP: Estas propiedades pueden aplicarse a los <li></li> o al contenedor <ul></ul>, <ol></ol>.
+
+
+  TIP: Las listas <ol></ol> <ul></ul> tienen las siguientes propiedades establecidas en el navegador:
+
+    margin-top
+    margin-bottom
+    padding-left
+
+*/
+
+.lista {
+  list-style-position: inside;
+  /*list-style-image: url(check.png);*/
+  /*background: #aaa;*/
+  list-style-type: upper-latin;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.lista li {
+  /*background: pink;*/
+  margin-bottom: .3em;
+ /* background: url(check.png) 0 center / contain no-repeat;
+  padding-left: 1.5em;*/
+}
+
+/*.lista li:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url(check.png) 0 0 / contain;
+  margin-right: .5em;
+  vertical-align: middle;
+}*/
+
+
+/* 
+
+ CONSTRUIR UN MENU DE NAVEGACION
+
+ Paso 1: resetear las listas
+
+ .menu,
+ .menu ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+ }
+
+ */
+
+
+/* ul principal */
+.menu {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border: 1px solid teal;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+/* Cada <li> del menu (en cualquier nivel) */
+.menu__item {
+  float: left;
+  /*display: inline-block;*/
+  border-right: 1px solid teal;
+  position: relative;
+}
+
+.menu__item:last-child {
+  border-right: none;
+}
+
+/* Cada uno de los <a></a> dentro de un <li></li> */
+.menu__link {
+  text-decoration: none;
+  color: teal;
+  padding: 0 1em;
+  display: block;
+  line-height: 2.5;
+}
+
+.menu__link:hover {
+  background: teal;
+  color: #fff;
+}
+
+/* Cada submenu <ul></ul>*/
+.menu--child {
+  display: none;
+  position: absolute;
+  width: 10em;
+}
+
+/* Cada item de un submenu */
+.menu__item--child {
+  float: none;
+  border-right: none;
+}
+
+/* Mostrar submenus */
+.menu__item:hover > .menu--child {
+  display: block;
+}

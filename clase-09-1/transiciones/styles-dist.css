@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  border-bottom: 5px solid grey;
+  height: 100px;
+  -webkit-transform:rotate(-5deg);
+      -ms-transform:rotate(-5deg);
+          transform:rotate(-5deg);
+}
+.box {
+  background: red;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: -webkit-calc(100% -  100px);
+  right: calc(100% -  100px);
+  -webkit-transition: all 2s linear;
+          transition: all 2s linear;
+}
+
+.container:hover .box{
+  right: 0;
+}
+
+.container-ring {
+  margin-top: 5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+[class^="ring"]{
+  width: 150px;
+  height: 150px;
+  border: 10px solid;
+  border-color: green red;
+  border-radius: 50%;
+  -webkit-transition: all 1s;
+          transition: all 1s;
+}
+.container-ring:hover [class^="ring"] {
+  -webkit-transform: rotate(720deg);
+      -ms-transform: rotate(720deg);
+          transform: rotate(720deg);
+}

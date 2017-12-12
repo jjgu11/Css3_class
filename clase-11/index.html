@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Clase 11 - Responsive Web Design</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>Responsive Web Design</h1>
+    <p>Es una metodología de diseño web que hace que el layout y el contenido de la página se adapten a cualquier tamaño de viewport.</p>
+    <h2>1. Meta viewport</h2>
+    <p>Es un tipo de meta creado por Apple cuando crea el iPhone. El meta viewport le dice al navegador como interpretar las dimensiones de la página respecto al tamaño del viewport.</p>
+<pre>
+<code>
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" /&gt;
+</code>
+</pre>
+  <h2>Media queries</h2>
+  <p>Son reglas CSS que permiten "filtrar" los estilos según el tipo de medio (por ejemplo: pantalla "screen" o impresora "print").</p>
+<pre>
+<code>
+  @media screen {
+    body {
+      background: black;
+      color: #fff;
+    }
+  }
+
+  @media print {
+    body {
+      background: white;
+      color: #222;
+    }
+  }
+
+  @media all {
+    body {
+      font-family: Helvetica, sans-serif;
+    }
+  }
+</code>
+</pre>
+
+  <h2>Breakpoints</h2>
+  <p>Son los tamaños (referidos al ancho del viewport) en los que algo cambia en el diseño.</p>
+  <p>Los breakpoints son añadidos como condiciones en las media queries.</p>
+  <h3>Major breakpoints</h3>
+  <p>Indican cambios de layout (como una columna que se transforma en dos)</p>
+  <h3>Minor breakpoints</h3>
+  <p>Indican cambios pequeños ya sea de layout o de contenido.</p>
+<pre>
+<code>
+  @media screen and (min-width: 400px) {
+    body {
+      background: red;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    body {
+      background: blue;
+    }
+  }
+
+  @media screen and (min-width: 700px) and (max-width: 1000px) {
+      body {
+        background: green;
+      }
+  }
+</code>
+</pre>
+<h2>Media Queries y Sass</h2>
+  <p>Sass permite anidar las media queries dentro del selector</p>
+  <h3>CSS puro</h3>
+<pre>
+<code>
+  body {
+    background: red;
+  }
+  @media screen and (min-width: 20em){
+    body {
+      background: pink;
+    }
+  }
+  @media screen and (min-width: 30em){
+    body {
+      background: yellow;
+    }
+  }
+</code>
+</pre>
+  <h3>Sass</h3>
+<pre>
+<code>
+  body {
+    background: red;
+    @media screen and (min-width: 600px) {
+      background: pink
+    }
+    @media screen and (min-width: 600px) {
+      background: yellow;
+    }
+  }
+</code>
+</pre>
+  </body>
+</html>

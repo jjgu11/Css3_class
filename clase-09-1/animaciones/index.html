@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Animaciones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles-dist.css">
+  </head>
+  <body>
+    <h1>Animaciones</h1>
+    <p>Las animaciones permiten mover elementos o cambiar sus propiedades en el tiempo.</p>
+
+    <div class="ball"></div>
+    <div class="shadow"></div>
+    <div class="teoria">
+    <p>Se requieren dos pasos para crear una animacion:</p>
+    <ul>
+      <li>Paso 1. Crear la animacion en el elemento</li>
+      <li>Paso 2. Definir los keyframes</li>
+    </ul>
+    <p>La animacion requiere dos valores obligatorios: el nombre y el tiempo. Ejemplo <code>animation: rotar 2s</code></p>
+    <p>Adicionalmente se le pueden pasar otros valores como infinite (para que se repita infinitamente), alternate (para que avance y retroceda) y linear (para que tenga la misma velocidad todo el tiempo).</p>
+    <p>Los keyframes indican los estados de la animacion en el tiempo. Podrian indicarse con from {} y to {} para el inicio y el final. Sin embargo pueden usarse porcentajes si se requiere mayor control.</p>
+    </div>
+  </body>
+</html>

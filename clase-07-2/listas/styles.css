@@ -1,0 +1,118 @@
+/* 
+  LISTAS
+
+  Existen tres propiedades para las listas (se pueden aplicar a los <li></li> o también a los <ul>, <ol>)
+
+    list-style-position
+      outside (default) | inside
+
+    list-style-image
+      a traves de la funcion url() muestra una imagen en lugar de la viñeta.
+      (no recomendado, se prefieren pseudo elementos o background-image).
+
+    list-style-type
+      disc
+      circle
+      square
+      decimal
+      decimal-leading-zero
+      lower-alpha
+      lower-roman
+      lower-latin
+      lower-greek
+      upper-roman
+      upper-alpha
+      upper-latin
+
+
+  Además, existe un shorthand
+
+    list-style
+
+  TIP:
+      las listas <ul> <ol> tiene las siguientes propiedades asignadas por el navegador:
+      margin-top
+      margin-bottom
+      padding-left
+
+  Es recomendable para menus poner todas estas propiedades en cero
+
+  .menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+
+*/
+
+.list {
+  border: 1px solid black;
+  list-style-type: upper-roman;
+  /*list-style-position: inside;*/
+  /*list-style-image: url(check.png);*/
+}
+
+.list li {
+  /*background: lightblue;*/
+  margin-bottom: .5em;
+  /*background: url(check.png) 0 0 / contain no-repeat;
+  padding-left: 1.6em;*/
+}
+
+/*.list li:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url(check.png) 0 0 / contain;
+  vertical-align: middle;
+  margin-right: .5em;
+}*/
+
+
+
+/* Construir un menu de navegacion*/
+
+.main-menu {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  background: teal;
+  display: table;
+  width: 100%;
+}
+
+.main-menu__item {
+  float: left;
+}
+
+.main-menu__item:hover {
+  background: rgba(0,0,0,.3);
+}
+
+.main-menu__link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  line-height: 2.5;
+  padding: 0 1.2em;
+}
+
+.main-menu--child {
+  position: absolute;
+  width: 8em;
+  display: none;
+}
+
+.main-menu__item--child {
+  float: none;
+}
+
+/* Mostrar submenu */
+
+.main-menu__item:hover > .main-menu--child {
+  display: block;
+}

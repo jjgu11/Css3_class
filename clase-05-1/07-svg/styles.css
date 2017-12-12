@@ -1,0 +1,40 @@
+#vector {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+/* 
+  En vectores se usan las siguientes propiedades:
+  background    -> fill
+  border        -> stroke
+  border-width  -> stroke-width
+
+  Dos propiedades para los bordes (stroke):
+
+  stroke-dasharray
+    que permite dividir el borde en segmentos
+  stroke-dashoffset
+    que permite comenzar el borde en una posicion determinada
+  
+*/
+
+
+circle {
+  fill: none;
+  stroke: green;
+  stroke-width: 10px;
+  stroke-dasharray: 503px;
+  stroke-dashoffset: 0;
+  animation: stroke 5s linear;
+}
+
+@keyframes stroke {
+  from {
+    stroke-dashoffset: 503px;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

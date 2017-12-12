@@ -1,0 +1,86 @@
+
+
+// Mixins para RWD.
+// Se llaman con @include y entre parentesis va el breakpoint.
+
+@mixin hasta($size){
+  @media screen and (max-width: $size){
+    @content;
+  }
+}
+
+@mixin desde($size){
+  @media screen and (min-width: $size){
+    @content;
+  }
+}
+
+body {
+  font-family:sans-serif;
+  background: red;
+  //@media screen and (min-width: 400px) {
+  //  background: pink
+  //}
+  //@media screen and (min-width: 600px) {
+  //  background: yellow;
+  //}
+
+  @include desde(400px){
+    background: pink;
+  }
+  
+  @include desde(600px){
+    background: yellow;
+  }
+}
+
+code {
+  display: block;
+  overflow: auto;
+  padding: .5em 0 .9em;
+  background: rgba(lightblue,.5);
+  font-size: 1.4em;
+}
+
+
+//@media screen and (min-width: 400px) {
+//  body {
+//    background: red;
+//  }
+//}
+//
+//@media screen and (min-width: 600px) {
+//  body {
+//    width: 80%;
+//    margin-left: auto;
+//    margin-right: auto;
+//  }
+//}
+//
+//@media screen and (min-width: 800px) {
+//  body {
+//    background: yellow;
+//  }
+//}
+//
+//@media screen and (min-width: 1000px) {
+//  body {
+//    background: green;
+//  }
+//}
+
+//@media screen and (max-width: 800px) {
+//  body {
+//    background: blue;
+//  }
+//}
+//
+//@media screen and (min-width: 700px) and (max-width: 1000px) {
+//  body {
+//    background: green;
+//  }
+//}
+
+
+
+// Estilos para ejemplo.html
